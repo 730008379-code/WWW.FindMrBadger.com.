@@ -1,0 +1,74 @@
+/* General styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0e4d7;
+    color: #3a2e2a;
+    text-align: center;
+    padding: 50px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 1.2rem;
+}
+
+/* Coffee cup animation */
+.coffee-section {
+    margin: 40px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.coffee-cup {
+    width: 100px;
+    height: 120px;
+    border: 5px solid #6b4226;
+    border-radius: 0 0 30px 30px;
+    background: linear-gradient(to top, #6b4226 70%, transparent 70%);
+    position: relative;
+    animation: slurp 1.5s infinite alternate;
+}
+
+/* Steam animation */
+.coffee-cup::after {
+    content: "";
+    position: absolute;
+    top: -40px;
+    left: 30px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255,255,255,0.8), transparent);
+    animation: steam 2s infinite;
+}
+
+@keyframes slurp {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-5px); }
+}
+
+@keyframes steam {
+    0% { transform: translateY(0) scale(0.5); opacity: 0.6; }
+    50% { transform: translateY(-20px) scale(1); opacity: 0.3; }
+    100% { transform: translateY(-40px) scale(0.5); opacity: 0; }
+}
+
+/* Button styling */
+button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    margin-top: 20px;
+    cursor: pointer;
+    border: 2px solid #6b4226;
+    border-radius: 8px;
+    background-color: #ffe5b4;
+}
+
+button:hover {
+    background-color: #ffd580;
+}
